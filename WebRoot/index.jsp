@@ -60,19 +60,27 @@
     <div class="collapse navbar-collapse navbar-collapse-example ">
 	     <ul class="nav navbar-nav">
 			    <li class="active"><a href="${pageContext.request.contextPath}"><strong>首页</strong></a></li>
-			    <li><a href="#"><strong>发布</strong></a></li>
+			   <!--  <li><a href="#"><strong>发布</strong></a></li> -->
+	     </ul>
+	     <ul class="nav navbar-nav navbar-right mobile_nav_hide">
+	     <c:if test="${sessionScope.user==null}">
 		        <li><a href="${pageContext.request.contextPath}/login.jsp"><strong>登录</strong></a></li>
 		        <li><a href="${pageContext.request.contextPath}/regist.jsp"><strong>注册</strong></a></li>
-	     </ul>
-
-   		<!--  <ul class="nav navbar-nav navbar-right mobile_nav_hide">
-	  		 <li>
-			  <button style="margin-top:10px" type="button" class="btn btn-primary" onclick="javascript:window.location.href=&#39;/add/pic&#39;">发布</button>
-			 </li>
-       			 <li><a href="http://www.cnquanjing.com/passport/">登录</a></li>
-			 <li><a href="http://www.cnquanjing.com/passport/register">注册</a></li>			
-		 </ul> -->
+		</c:if>
+	    <c:if test="${sessionScope.user!=null}">
+	    <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background:none">
+	               	欢迎回来，${sessionScope.user.username}!
+	               	<b class="caret"></b>
+               	</a>
+               <ul class="dropdown-menu" role="menu">
+				         <li><a href="${pageContext.request.contextPath}/LogoutServlet">&nbsp;&nbsp;&nbsp;&nbsp;注&nbsp;&nbsp;&nbsp;&nbsp;销</a></li>
+               </ul>
+ 		</li>
+	    </c:if>
+	    </ul>
     </div>
+  </div>
   </div>
 </nav>
 </header>
@@ -204,7 +212,7 @@
 
 	<div class="row">
 		<div class="col-xs-12">
-			<h2 class="text-muted">景点欣赏<a href="http://www.cnquanjing.com/pictures"><small class="text-muted  pull-right more">更多&gt;&gt;</small></a></h2>
+			<h2 class="text-muted">景点欣赏<a href="#"><small class="text-muted  pull-right more">更多&gt;&gt;</small></a></h2>
 		</div>
 	</div>
 	<!--一个卡片列表行-->
@@ -213,7 +221,7 @@
 			<!--卡片列表循环-->
 			 <div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 			   <div class="card" href="###">
-			     <a target="_blank" href="${pageContext.request.contextPath}/panorama/qj_1.html"><img src="./vesv_files/thumb(8).jpg" alt="广东城市夜景"></a>
+			     <a target="_blank" href="${pageContext.request.contextPath}/panorama/qj_1.jsp"><img src="./vesv_files/thumb(8).jpg" alt="广东城市夜景"></a>
 			     <div class="card-heading">
 			     	<div class="col-md-9 col-xs-8 of_hide padding0">
 			     		<strong class="text-primary">广东城市夜景</strong> 
@@ -231,7 +239,7 @@
 			 </div>
 			 <div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 			   <div class="card" href="###">
-			     <a target="_blank" href="http://www.cnquanjing.com/tour/d37c0657e6082e0b"><img src="./vesv_files/thumb(9).jpg" alt="坊子区九龙涧生态科普教育基地VR全景"></a>
+			     <a target="_blank" href="#"><img src="./vesv_files/thumb(9).jpg" alt="坊子区九龙涧生态科普教育基地VR全景"></a>
 			     <div class="card-heading">
 			     	<div class="col-md-9 col-xs-8 of_hide padding0">
 			     		<strong class="text-primary">九龙涧自然风景区</strong> 
@@ -247,7 +255,7 @@
 			 </div>
 			 <div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 			   <div class="card" href="###">
-			     <a target="_blank" href="http://www.cnquanjing.com/tour/0e6c5c6ead8d62c7"><img src="./vesv_files/thumb(12).jpg" alt="深圳北站夜景"></a>
+			     <a target="_blank" href="#"><img src="./vesv_files/thumb(12).jpg" alt="深圳北站夜景"></a>
 			     <div class="card-heading">
 			     	<div class="col-md-9 col-xs-8 of_hide padding0">
 			     		<strong class="text-primary">深圳北站夜景</strong> 
@@ -263,7 +271,7 @@
 			 </div>
 			<div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 			   <div class="card" href="###">
-			     <a target="_blank" href="http://www.cnquanjing.com/tour/417e556d3e25050c"><img src="./vesv_files/thumb(13).jpg" alt="襄阳小武当真武山"></a>
+			     <a target="_blank" href="#"><img src="./vesv_files/thumb(13).jpg" alt="襄阳小武当真武山"></a>
 			     <div class="card-heading">
 			     	<div class="col-md-9 col-xs-8 of_hide padding0">
 			     		<strong class="text-primary">襄阳小武当真武山</strong> 
@@ -279,7 +287,7 @@
 			 </div>
 			 <div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 			   <div class="card" href="###">
-			     <a target="_blank" href="http://www.cnquanjing.com/tour/b8a90ec5147f6925"><img src="./vesv_files/thumb(16).jpg" alt="襄阳新农村典范白云人家"></a>
+			     <a target="_blank" href="#"><img src="./vesv_files/thumb(16).jpg" alt="襄阳新农村典范白云人家"></a>
 			     <div class="card-heading">
 			     	<div class="col-md-9 col-xs-8 of_hide padding0">
 			     		<strong class="text-primary">襄阳白云人家</strong> 
@@ -295,7 +303,7 @@
 			 </div>
 			 <div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 			   <div class="card" href="###">
-			     <a target="_blank" href="http://www.cnquanjing.com/tour/97d6e47bd48ed22b"><img src="./vesv_files/thumb(17).jpg" alt="北京国家体育场—鸟巢"></a>
+			     <a target="_blank" href="#"><img src="./vesv_files/thumb(17).jpg" alt="北京国家体育场—鸟巢"></a>
 			     <div class="card-heading">
 			     	<div class="col-md-9 col-xs-8 of_hide padding0">
 			     		<strong class="text-primary">北京国家体育场—鸟巢</strong> 
@@ -311,7 +319,7 @@
 			 </div>
 			 <div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 			   <div class="card" href="###">
-			     <a target="_blank" href="http://www.cnquanjing.com/tour/fd35f4bf3fb651f6"><img src="./vesv_files/thumb(18).jpg" alt="菏泽曹州牡丹园"></a>
+			     <a target="_blank" href="#"><img src="./vesv_files/thumb(18).jpg" alt="菏泽曹州牡丹园"></a>
 			     <div class="card-heading">
 			     	<div class="col-md-9 col-xs-8 of_hide padding0">
 			     		<strong class="text-primary">菏泽牡丹园</strong> 
@@ -327,7 +335,7 @@
 			 </div>
 			 <div class="col-md-3 col-sm-3 col-xs-6 col-lg-3">
 			   <div class="card" href="###">
-			     <a target="_blank" href="http://www.cnquanjing.com/tour/4375afe07f63cbf5"><img src="./vesv_files/thumb(19).jpg" alt="深圳欢乐谷VR全景"></a>
+			     <a target="_blank" href="#"><img src="./vesv_files/thumb(19).jpg" alt="深圳欢乐谷VR全景"></a>
 			     <div class="card-heading">
 			     	<div class="col-md-9 col-xs-8 of_hide padding0">
 			     		<strong class="text-primary">深圳欢乐谷</strong> 

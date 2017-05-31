@@ -48,14 +48,14 @@ public class UserServiceImpl implements UserService{
 			Session session=Session.getInstance(prop);
 			//获取邮箱对象
 			Message msg=new  MimeMessage(session);
-			msg.setFrom(new InternetAddress("Estore@yuan.com"));
+			msg.setFrom(new InternetAddress("Vesv@yuan.com"));
 			msg.setRecipient(RecipientType.TO,new InternetAddress(user.getEmail()));
-			msg.setSubject(user.getUsername()+"来自Estore的激活邮件");
-			msg.setText(user.getUsername()+"您好,这是Estore账户的激活邮件，您的激活码是"+user.getActivecode()+",请复制以下地址至地址栏进行激活操作：http://localhost:8080/Estore/ActiveServlet?activecode="+user.getActivecode());
+			msg.setSubject(user.getUsername()+":这是来自Vesv的激活邮件");
+			msg.setText(user.getUsername()+"您好,这是Vesv账户的激活邮件，您的激活码是"+user.getActivecode()+",请复制以下地址至地址栏进行激活操作：http://localhost:8080/Vesv/ActiveServlet?activecode="+user.getActivecode());
 			
 			//找到邮递员
 			Transport trans=session.getTransport();
-			trans.connect("Estore", "123");//输入用户名密码
+			trans.connect("Vesv", "123");//输入用户名密码
 			trans.sendMessage(msg,msg.getAllRecipients());
       }catch(Exception e){
     	  e.printStackTrace();

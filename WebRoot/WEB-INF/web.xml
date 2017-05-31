@@ -255,4 +255,24 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>SceneListServlet</display-name>
+    <servlet-name>SceneListServlet</servlet-name>
+    <servlet-class>com.example.web.SceneListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SceneListServlet</servlet-name>
+    <url-pattern>/SceneListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddSceneServlet</display-name>
+    <servlet-name>AddSceneServlet</servlet-name>
+    <servlet-class>com.example.web.AddSceneServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSceneServlet</servlet-name>
+    <url-pattern>/AddSceneServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -102,6 +102,7 @@
 		   </div>
 		  <div class="row top15">
 			<div class="col-md-8 col-md-offset-2">
+				<br/>
 				<strong><a href="${pageContext.request.contextPath}/regist.jsp">没有用户名？请点击注册！</a></strong>
 			</div>
   		  </div>
